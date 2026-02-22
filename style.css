@@ -1,0 +1,103 @@
+:root {
+    --negro: #111111;
+    --gris-oscuro: #333333;
+    --gris-claro: #f0f0f0;
+    --blanco: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--blanco);
+    color: var(--negro);
+}
+
+/* Contenedor Principal */
+.main-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Izquierda (Fija o proporcional) */
+.sidebar {
+    width: 30%;
+    background-color: var(--negro);
+    color: var(--blanco);
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    
+    margin-bottom: 20px;
+}
+
+.sidebar h1 { font-size: 1.8rem; margin: 10px 0; }
+.tagline { color: var(--gris-claro); font-weight: 300; margin-bottom: 40px; }
+
+.sidebar h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid var(--gris-oscuro);
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+.sidebar ul { padding: 0; list-style: none; }
+.sidebar li { margin-bottom: 10px; font-size: 0.9rem; color: #ccc; }
+
+/* Contenido Derecha */
+.content {
+    width: 70%;
+    padding: 80px 60px;
+}
+
+.about-me h2, .projects-grid-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.about-me p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    color: var(--gris-oscuro);
+}
+
+/* Rejilla de Proyectos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    padding: 25px;
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: var(--negro);
+    background-color: #fafafa;
+}
+
+.project-card h3 { margin-top: 0; font-size: 1.1rem; }
+.project-card p { font-size: 0.9rem; color: #666; }
+.project-card a { 
+    text-decoration: none; 
+    color: var(--negro); 
+    font-weight: bold; 
+    font-size: 0.8rem; 
+}
+
+/* Ajuste Móvil */
+@media (max-width: 850px) {
+    .main-wrapper { flex-direction: column; }
+    .sidebar, .content { width: 100%; box-sizing: border-box; }
+}
